@@ -1,5 +1,6 @@
-var quiz = document.getElementById('quiz');
-var reults = document.getElementById('results');
+var quiz = document.getElementById('#quiz');
+var question = document.getElementById('#question');
+var answers = document.getElementById('#answers'); 
 var submitButton 
 
 var quizQuestions = [
@@ -70,7 +71,7 @@ var quizQuestions = [
     },
 ];
 
-function generateQuiz(questions, quiz, results, submitButton) {
+function generateQuiz(questions, quiz, submitButton) {
     function showQuestions (questions, quiz) {
         var output = [];
         var answers;
@@ -87,34 +88,38 @@ function generateQuiz(questions, quiz, results, submitButton) {
                 + '</label>'
             );
         }
+        output.push(
+            '<div class="question">' +questions[i].question + '</div>'
+            + '<div class="answers">' + answers.join('') + '</div>'
+        );
 
         }
 
     }
-    function showResults(questions, quiz, results) {
+    function showResults(questions, quiz) {
         var answers = quiz.querySelectorAll('.answers');
         var userAnswer = '';
-        var numCorrect = 0;
+        
 
         for(var i=0; i<questions.length; i++){
             userAnswer = (answers[i].querySelector('input[neme=question'+i+']:clicked')||{}).value;
 
             if(userAnswer===questions[i].correctAnswer){
                 numCorrect++;
-                answer[i].style.color = 'green';
+                answers[i].style.color = 'green';
             }
 
             else{
-                answer.[i].style.color = 'red';
+                answers.[i].style.color = 'red';
             }
         }
 
-        results.innerHTML = numCorrect + ' out of ' + questions.length;
+        
 
     }
-    showQuestions(question, quiz);
+    showQuestions(questions, quiz);
 
     submitButton.onclick = function(){
-        showResults(questions, quiz, results);
+        showResults(questions, quiz);
     }
 }
