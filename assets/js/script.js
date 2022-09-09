@@ -74,7 +74,10 @@ var quizQuestions = [
 
 
 function showQuestion(){
-    
+    for (var i = 0; i < quizQuestions.length; i++) {
+        question = quizQuestions[quizQuestions].question;
+        answers = quizQuestions[quizQuestions].answers;
+}
 }
 showQuestion(question);
 
