@@ -1,7 +1,7 @@
-var quiz = document.getElementById('#quiz');
-var question = document.getElementById('#question');
-var answers = document.getElementById('#answers'); 
-var submitButton 
+var quiz = document.getElementById('quiz');
+var question = document.getElementById('question');
+var answers = document.getElementById('answers'); 
+var submitButton = document.getElementById('start');
 
 var quizQuestions = [
     {
@@ -12,7 +12,7 @@ var quizQuestions = [
             C: 'Procedural',
             D: 'None of the Above'
         },
-        correctAnswer: 'A'
+        correctAnswer: 'object-Oriented'
     },
 
     {
@@ -20,10 +20,10 @@ var quizQuestions = [
         answers: {
             A: 'var',
             B: 'let',
-            C: 'Both 1 and 2',
+            C: 'Both A and B',
             D: 'None of the Above'
         },
-        correctAnswer: 'C'
+        correctAnswer: 'Both A and B'
     },
 
     {
@@ -31,10 +31,10 @@ var quizQuestions = [
         answers: {
             A: 'getElementById()',
             B: 'getElementByClassName()',
-            C: 'Both 1 and 2',
+            C: 'Both A and B',
             D: 'None of the Above'
         },
-        correctAnswer: 'C'
+        correctAnswer: 'Both A and B'
     },
 
     {
@@ -45,7 +45,7 @@ var quizQuestions = [
             C: 'gives a warning',
             D: 'None of the Above'
         },
-        correctAnswer: 'B'
+        correctAnswer: 'ignores the statements'
     },
 
     {
@@ -56,7 +56,7 @@ var quizQuestions = [
             C: 'window.alert()',
             D: 'All of the Above'
         },
-        correctAnswer: 'D'
+        correctAnswer: 'All of the Above'
     },
 
     {
@@ -67,17 +67,16 @@ var quizQuestions = [
             C: 'var',
             D: 'constatnt'
         },
-        correctAnswer: 'A'
+        correctAnswer: 'const'
     },
 ];
 
-function generateQuiz(questions, quiz, submitButton) {
-    function showQuestions (questions, quiz) {
+function generateQuiz(question, quiz, submitButton) {
+    function showQuestions (question, quiz) {
         var output = [];
         var answers;
 
-        for(var i=0; i<questions.length; i++){
-            answers = [];
+        
 
         for(letter in questions[i].answers){
             answers.push(
@@ -105,21 +104,19 @@ function generateQuiz(questions, quiz, submitButton) {
             userAnswer = (answers[i].querySelector('input[neme=question'+i+']:clicked')||{}).value;
 
             if(userAnswer===questions[i].correctAnswer){
-                numCorrect++;
+                //numCorrect++;//
                 answers[i].style.color = 'green';
             }
 
             else{
-                answers.[i].style.color = 'red';
+                answers[i].style.color = 'red';
             }
         }
 
         
 
     }
-    showQuestions(questions, quiz);
-
-    submitButton.onclick = function(){
-        showResults(questions, quiz);
-    }
-}
+    //showQuestions(question, quiz);
+    submitButton.addEventListener("click", function(){
+        console.log("hello");
+    });   
