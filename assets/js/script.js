@@ -71,52 +71,14 @@ var quizQuestions = [
     },
 ];
 
-function generateQuiz(question, quiz, submitButton) {
-    function showQuestions (question, quiz) {
-        var output = [];
-        var answers;
 
-        
 
-        for(letter in questions[i].answers){
-            answers.push(
-                '<label>'
-                + '<input type="button" name="question'+i+'" value="'+letter+'">'
-                + letter + ': '
-                + questions[i].answers[letter]
-                + '</label>'
-            );
-        }
-        output.push(
-            '<div class="question">' +questions[i].question + '</div>'
-            + '<div class="answers">' + answers.join('') + '</div>'
-        );
+function showQuestion(){
+    
+}
+showQuestion(question);
 
-        }
 
-    }
-    function showResults(questions, quiz) {
-        var answers = quiz.querySelectorAll('.answers');
-        var userAnswer = '';
-        
-
-        for(var i=0; i<questions.length; i++){
-            userAnswer = (answers[i].querySelector('input[neme=question'+i+']:clicked')||{}).value;
-
-            if(userAnswer===questions[i].correctAnswer){
-                //numCorrect++;//
-                answers[i].style.color = 'green';
-            }
-
-            else{
-                answers[i].style.color = 'red';
-            }
-        }
-
-        
-
-    }
-    //showQuestions(question, quiz);
-    submitButton.addEventListener("click", function(){
-        console.log("hello");
-    });   
+    submitButton.addEventListener("click", function () {
+            console.log(quizQuestions);
+        });   
