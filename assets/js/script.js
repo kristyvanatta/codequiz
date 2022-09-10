@@ -74,14 +74,16 @@ var quizQuestions = [
 
 
 function showQuestion(){
-    for (var i = 0; i < quizQuestions.length; i++) {
-        question = quizQuestions[quizQuestions].question;
-        answers = quizQuestions[quizQuestions].answers;
+    for (var i = 0; i < question.length; i++) {
+        question = question[questionIndex].title;
+        answers = question[questionIndex].answers;
 }
+if () {
+
 }
-showQuestion(question);
+showQuestion();
+}
 
 
-    submitButton.addEventListener("click", function () {
-            console.log(quizQuestions);
-        });   
+    submitButton.addEventListener("click", showQuestion);
+            //console.log("hello");  
