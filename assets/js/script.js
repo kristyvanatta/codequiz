@@ -76,7 +76,7 @@ var quizQuestions = [
 function startQuiz() {
     timerCount = 30;
     startButton.disabled = true;
-    question()
+    question ()
 }
 
 function startTimer() {
@@ -113,4 +113,3 @@ function startTimer() {
 
     }
     )
-
