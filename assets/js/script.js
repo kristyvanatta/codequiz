@@ -2,6 +2,8 @@ var quiz = document.getElementById('quiz');
 var question = document.getElementById('question');
 var answers = document.getElementById('answers'); 
 var submitButton = document.getElementById('start');
+//var timerElement = docuument.querySelctor(".timer-count");
+
 
 var quizQuestions = [
     {
@@ -71,19 +73,44 @@ var quizQuestions = [
     },
 ];
 
-
-
-function showQuestion(){
-    for (var i = 0; i < question.length; i++) {
-        question = question[questionIndex].title;
-        answers = question[questionIndex].answers;
-}
-if () {
-
-}
-showQuestion();
+function startQuiz() {
+    timerCount = 30;
+    startButton.disabled = true;
+    question()
 }
 
+function startTimer() {
+    timer = setInterval(function() {
+        timerCount--;
+        timerElement.textContent = timerCount;
+        if (timerCount >= 0) {
+        if (question && timerCount > 0) {
+                clearInterval(timer);
+                endQuiz();
+            }
+        }
+        if (timerCount === 0) {
+            clearInterval(timer);
+            endQuiz();
+        }
+    }, 1000);
+}
 
-    submitButton.addEventListener("click", showQuestion);
-            //console.log("hello");  
+// function showQuestion(){
+//     for (var i = 0; i < question.length; i++) {
+//         question = question[questionIndex].title;
+//         answers = question[questionIndex].answers;
+// }
+//if () {
+
+//}
+//showQuestion();
+//}
+
+
+    submitButton.addEventListener("click", function (){
+        console.log("hello");  
+
+    }
+    )
+
