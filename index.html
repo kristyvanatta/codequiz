@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Code Quiz</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="assets\css\style.css" />
-</head>
+  </head>
 
-<body>
-    <header>
+  <body>
+    <div id="menu">
+      <header>
         <div>Code Quiz</div>
-    </header>
+      </header>
 
-<main>
-    <section>
-        <button id="start">Start Quiz</button>
-    </section>
-    
-    <div id="quiz"></div>
-    <div id="question"></div>
-    <ul>
-        <li id="answers"></li>
-        <li id="answers"></li>
-        <li id="answers"></li>
-        <li id="answers"></li>
-    </ul>
-    <div class="timer">
+      <div id="quiz"></div>
+      <ul>
+        <li id="answers1"></li>
+        <li id="answers2"></li>
+        <li id="answers3"></li>
+        <li id="answers4"></li>
+      </ul>
+      <div class="timer">
         <div class="timer-count">60</div>
         <h3>seconds remaining</h3>
+      </div>
     </div>
-</main>
+      <section>
+          <button id="start">Start Quiz</button>
+        </section>
+        
+    <div id="question"></div>
     <script src="assets\js\script.js"></script>
-</body>
+  </body>
 </html>

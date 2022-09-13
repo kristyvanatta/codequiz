@@ -74,9 +74,14 @@ var quizQuestions = [
 ];
 
 function startQuiz() {
-    timerCount = 30;
-    startButton.disabled = true;
-    question ()
+    var question = document.getElementById('question');
+        question.innerHTML = quizQuestions[0].question;
+
+    var element = document.getElementById('menu');
+    element.classList.add('dissapear');
+    // timerCount = 30;
+    // startButton.disabled = true;
+    // question ()
 }
 
 function startTimer() {
@@ -109,6 +114,7 @@ function startTimer() {
 
 
     submitButton.addEventListener("click", function (){
+        startQuiz();
         console.log("hello");  
 
     }

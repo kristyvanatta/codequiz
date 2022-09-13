@@ -24,6 +24,10 @@ button {
 	margin-top: 20px;
 }
 
+.dissapear {
+	display: none;
+}
+
 #question {
     font-weight:500;
 }
