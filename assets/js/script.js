@@ -3,7 +3,11 @@ var question = document.getElementById('question');
 var answers = document.getElementById('answers'); 
 var submitButton = document.getElementById('start');
 //var timerElement = docuument.querySelctor(".timer-count");
-
+var question = document.getElementById('question');
+var answers1 = document.getElementById('answers1');
+var answers2 = document.getElementById('answers2');
+var answers3 = document.getElementById('answers3');
+var answers4 = document.getElementById('answers4');
 
 var quizQuestions = [
     {
@@ -74,8 +78,17 @@ var quizQuestions = [
 ];
 
 function startQuiz() {
-    var question = document.getElementById('question');
+    
         question.innerHTML = quizQuestions[0].question;
+
+        answers1.innerHTML = 'A: ' + quizQuestions[0].answers.A;
+        
+        answers2.innerHTML = 'B: ' +  quizQuestions[0].answers.B;
+        
+        answers3.innerHTML = 'C: ' + quizQuestions[0].answers.C;
+
+        answers4.innerHTML = 'D: ' + quizQuestions[0].answers.D;
+
 
     var element = document.getElementById('menu');
     element.classList.add('dissapear');
@@ -117,5 +130,21 @@ function startTimer() {
         startQuiz();
         console.log("hello");  
 
-    }
-    )
+    })
+
+    answers1.addEventListener("click", function(){
+        console.log('clickA');
+        console.log(answers1.value);
+    })
+
+    answers2.addEventListener("click", function(){
+        console.log('clickB');
+    })
+
+    answers3.addEventListener("click", function(){
+        console.log('clickC');
+    })
+    answers4.addEventListener("click", function(){
+        console.log('clickD');
+    })
+    
